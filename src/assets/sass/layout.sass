@@ -1,2 +1,52 @@
+.preheader
+	@include mw
+	background: url(/assets/img/ui/bg.jpg)
+	margin-top: 1rem !important
+	display: flex
+	font-size: 14px
+	color: #fff
+	padding: 8px 60px
+	a
+		color: #fff
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	ul
+		display: flex
+		font-weight: 300
+		&.soc
+			gap: 12px
+			align-items: center
+			li
+				&.ask
+					background-color: $light_blue
+					color: $blue
+					padding: 12px 40px
+					border-radius: 4px
+					margin-left: 12px
+					cursor: pointer
+					border: 1px solid transparent
+					&:hover
+						background-color: #D8E2ED
+					&:active
+						color: $light_blue
+						border-color: $light_blue
+						background-color: transparent
+				a
+					&:hover
+						opacity: 0.85
+		&.contacts
+			gap: 54px
+			flex-grow: 1
+			letter-spacing: 0.7px
+			img
+				margin-right: 1rem
+			li
+				align-items: center
+				display: flex
+				a
+					display: flex
+					align-items: center
+					
 header
 	@include mw
