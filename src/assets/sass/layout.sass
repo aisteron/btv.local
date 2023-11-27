@@ -47,6 +47,53 @@
 				a
 					display: flex
 					align-items: center
-					
 header
 	@include mw
+	display: flex
+	padding: 1rem 60px
+	align-items: center
+	background: linear-gradient(111deg, rgba(255, 255, 255, 0.50) -8.95%, rgba(255, 255, 255, 0.60) 114%)
+	backdrop-filter: blur(7.5px)
+	a.logo
+		flex-grow: 1
+	nav
+		a
+			color: $dark
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+		>ul
+			display: flex
+			gap: 1rem
+			>li
+				&:not(:last-child)
+					&:after
+						content: url(/assets/img/icons/d.svg)
+						margin-left: 1rem
+						position: relative
+						top: 3px
+				&:last-child
+					transform: translateY(3px)
+
+				&.expandable
+					ul
+						display: none
+					svg
+						width: 16px
+						height: 16px
+						display: inline-block
+						margin-left: 11px
+					.title
+						display: inline-flex
+						align-items: center	
+body.index-page
+	.postheader
+		@include mw
+		height: 557px
+		background-position: center
+		background-repeat: no-repeat
+		position: relative
+		margin-top: -92px !important
+		z-index: -1
+
+	

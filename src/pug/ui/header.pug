@@ -33,5 +33,44 @@ header
 		ul
 			li
 				a(href="/about.html") О нас
+			li.expandable
+				span.title
+					a(href="/services.html") Услуги
+					include /svg/chevron.pug
+				ul.f
+					li
+						a(href="/services.html") Комплексное бухгалтерское обслуживание
+						ul
+							li
+								a(href="#") Организации оптовой торговли
+							li
+								a(href="#") Производственные компании
+							li
+								a(href="#") Строительные компании
+
+					li
+						a(href="#") Ведение участков бухгалтерского учета
+					li
+						a(href="#") Постановка бухгалтерского учета
+					li
+						a(href="#") Восстановление бухгалтерского учета
+					li
+						a(href="#") Разовые услуги
 			li
-				a(href="/services.html") Услуги
+				a(href="/price.html") Тарифы и цены
+			li
+				a(href="/news.html") Новости
+			li
+				a(href="/faq.html") Вопрос / Ответ
+			li
+				a(href="/contacts.html") Контакты
+
+
+.postheader(style="background-image:url(/assets/img/pages/home/Frame1597883061.webp)")
+	.dsc
+		h1 Ведение бухгалтерского учета
+		h2 Бухгалтерский учёт для организаций и индивидуальных предпринимателей
+		a(href="/") Услуги
+	.stats
+		.item
+			.age > 12 лет
