@@ -297,7 +297,7 @@ header
 			.item
 				padding: 1.5rem
 				background-color: #fff
-				box-shadow: 0px 8px 16px 0px rgba(23, 23, 23, 0.12), 0px 2px 1px 0px rgba(23, 23, 23, 0.04)
+				box-shadow: $card_shadow
 				.title
 					font-size: 20px
 					color: $blue
@@ -320,6 +320,7 @@ header
 			display: flex
 			flex-direction: column
 			gap: 15px
+			padding-bottom: 40px
 			>label
 				display: flex
 				flex-direction: column
@@ -370,14 +371,65 @@ header
 				&:hover
 					background-color: lighten($blue, 5%)
 	&.accordion
+		margin-top: 40px
 		details
 			box-shadow: 0px 8px 16px 0px rgba(23, 23, 23, 0.12), 0px 2px 1px 0px rgba(23, 23, 23, 0.04)
+			&[open]
+				summary:after
+					transform: rotate(-90deg) scale(0.8)
 			summary
 				padding: 1.5rem
-				&::marker
-					display: none
+				list-style: none
+				position: relative
+				&:after
+					transition: all 0.2s ease
+					content: url(/assets/img/icons/fat_chevron.svg)
+					position: absolute
+					right: 1.5rem
+					transform: rotate(90deg) scale(0.8)
+					filter: $hover_blue
 			.content
 				padding: 24px
+	&.news
+		.swiper.news
+			padding: 19px
+			margin: -19px
+			.swiper-slide
+				background-color: $grey
+				height: auto
+				&-visible
+					box-shadow: $card_shadow
+				>img
+					width: 100%
+					border-bottom-left-radius: 0
+					border-bottom-right-radius: 0
+				a.title
+					color: $blue
+					text-decoration: none
+					font-size: 20px
+					font-weight: 500
+					display: block
+					&:hover
+						text-decoration: underline
+				.dsc
+					padding: 1.5rem
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					gap: 1rem
+
+				.date
+					position: absolute
+					top: 0
+					left: 0
+					max-width: 182px
+					background-color: $light_blue	
+					display: flex
+					align-items: center
+					padding: 0.75rem 1.5rem
+					gap: 8px
+
+
 body.index-page
 	section.content
 		@include mw
