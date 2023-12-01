@@ -3,24 +3,26 @@ $blue: #011B3E
 $dark: #4C597C
 $hover_blue: invert(11%) sepia(17%) saturate(5636%) hue-rotate(193deg) brightness(89%) contrast(107%)
 $hover_light_blue: invert(85%) sepia(98%) saturate(7083%) hue-rotate(178deg) brightness(109%) contrast(104%)
+
 @font-face
-	font-family: 'SF Pro Display'
+	font-family: 'SF Pro Text'
 	font-style: normal
 	font-weight: 300
-	src: local('SF Pro Display'), local('SF Pro Display-Light'), url('/assets/fonts/sf-pro-display_light.woff2') format('woff2')
-	font-display: block
-@font-face
-	font-family: 'SF Pro Display'
-	font-style: normal
-	font-weight: 400
-	src: local('SF Pro Display'), local('SF Pro Display-Regular'), url('/assets/fonts/sf-pro-display_regular.woff2') format('woff2')
+	src: local('SF Pro Text'), local('SF Pro Text Light'), url('/assets/fonts/sf-pro-text-light.woff2') format('woff2')
 	font-display: block
 
 @font-face
-	font-family: 'SF Pro Display'
+	font-family: 'SF Pro Text'
+	font-style: normal
+	font-weight: 400
+	src: local('SF Pro Text'), local('SF Pro Text Regular'), url('/assets/fonts/sf-pro-text-regular.woff2') format('woff2')
+	font-display: block
+
+@font-face
+	font-family: 'SF Pro Text'
 	font-style: normal
 	font-weight: 500
-	src: local('SF Pro Display'), local('SF Pro Display-Medium'), url('/assets/fonts/sf-pro-display_medium.woff2') format('woff2')
+	src: local('SF Pro Text'), local('SF Pro Text Medium'), url('/assets/fonts/sf-pro-text-medium.woff2') format('woff2')
 	font-display: block
 
 html
@@ -31,16 +33,39 @@ html
 body
 	margin: 0
 	padding: 0
-	font-family: 'SF Pro Display', sans-serif
+	font-family: 'SF Pro Text', sans-serif
 
 ul
 	margin: 0
 	padding: 0
 	list-style: none
+	&.ok
+		padding-left: 22px
+		position: relative
+		li
+			&:before
+				content: url(/assets/img/icons/ok.svg)
+				position: absolute
+				left: 0
+				filter: $hover_blue
+a.arrowLink
+	display: flex
+	align-items: center
+	gap: 12px
+	text-decoration: none
+	letter-spacing: 2%
+	&:hover
+		text-decoration: underline
 
 img, picture,svg
 	max-width: 100%
 	display: block
+.swiper
+	&-wrapper
+		.swiper-slide
+			border-radius: 4px
+			img
+				border-radius: 4px	
 
 .mt1
 	margin-top: 1rem

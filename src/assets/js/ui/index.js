@@ -17,9 +17,13 @@ export const swipers = {
 			slidesPerView: 1,
 			spaceBetween: 10,
 			pagination: {
-				el: ".widget.services .pagination",
+				el: qs(".pagination",ss.closest('.widget')),
 				clickable: true,
 			},
+			navigation: {
+        nextEl: qs(".next",ss.closest(".widget")),
+        prevEl: qs(".prev",ss.closest(".widget")),
+      },
 			breakpoints: {
         640: {
           slidesPerView: 2,
