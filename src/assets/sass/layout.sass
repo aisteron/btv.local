@@ -88,6 +88,94 @@ header
 					.title
 						display: inline-flex
 						align-items: center	
+footer
+	@include mw
+	background-image: url(/assets/img/ui/bg.jpg)
+	color: $light_blue
+	font-size: 13px
+	font-weight: 300
+	margin-bottom: 1rem !important
+	margin-top: 1rem !important
+	min-height: 216px
+	padding: 2rem
+	padding-bottom: 24px
+	a
+		color: $light_blue
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	.items
+		display: grid
+		grid-template-columns: repeat(4,263px)
+		gap: 76px
+		height: 156px
+		.item
+			&.logo
+				display: flex
+				flex-direction: column
+				gap: 8px
+				span
+					display: block
+					&.copy
+						//flex-grow: 1
+						margin-top: auto
+			&.nav
+				display: grid
+				grid-template-columns: repeat(2,1fr)
+				ul
+					li
+						&:not(:last-child)
+							margin-bottom: 12px
+					&:first-of-type
+						grid-row: 1
+						grid-column: 1
+					&:last-of-type
+						grid-row: 1
+						grid-column: 2
+				a.policy
+					grid-row: 2
+					grid-column: 1/3
+					margin-top: auto
+			&.tel
+				display: flex
+				flex-direction: column
+				a.user
+					display: inline-block
+					margin-top: auto
+				ul
+					li
+						&:not(last-child)
+							margin-bottom: 10px
+						&.tel a, &.email
+								display: flex
+								align-items: center
+								gap: 10px
+			&.soc
+				display: flex
+				flex-direction: column
+				gap: 1rem
+				.soc_list
+					ul
+						display: flex
+						gap: 10px
+						margin-top: 10px
+				.ask, .pub
+					display: block
+				.ask
+					background-color: $light_blue
+					color: $blue
+					padding: 12px 39px
+					align-self: baseline
+					border-radius: 4px
+					cursor: pointer
+					&:hover
+						background-color: darken($light_blue, 5%)
+				.pub
+					margin-top: auto
+
+
+
+
 .widget
 	.header
 		margin-top: 100px
@@ -428,7 +516,25 @@ header
 					align-items: center
 					padding: 0.75rem 1.5rem
 					gap: 8px
-
+	&.testimonials
+		.swiper-slide
+			background-image: url(/assets/img/icons/quotes.svg)
+			background-repeat: no-repeat
+			background-position: 70% 0
+			span
+				display: block
+				&.name
+					color: $blue
+					font-weight: 500
+					font-size: 20px
+					margin-bottom: 5px
+				&.role
+					color: $dark
+					font-size: 14px
+			.content
+				color: $dark
+				font-size: 15px
+				line-height: 140%
 
 body.index-page
 	section.content
@@ -513,6 +619,3 @@ body.index-page
 				span.dsc
 					font-weight: 400
 					line-height: 120%
-			
-
-	
