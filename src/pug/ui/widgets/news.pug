@@ -1,45 +1,52 @@
+include ../../mixins/news
+
 .widget.news
+
+	- var news = [
+	-	{
+	-		"img": '01.jpg',
+	-		"link": 'Изменения для индивидуальных предпринимателей с 1 июля 2023',
+	-		"excerpt": 'На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..',
+	-		"date": '16 июня 2023'
+	-	},
+	-	{
+	-		"img": '02.jpg',
+	-		"link": 'Изменения НДС в 2023',
+	-		"excerpt": 'В Беларуси в 2023 году вступил в силу Закон № 230-З, предусматривающий внесение изменений и дополнений в некоторые зако...',
+	-		"date": '05 мая 2023'
+	-	},
+	-	{
+	-		"img": '03.jpg',
+	-		"link": 'Платим налог на недвижимость с физических лиц в 2023',
+	-		"excerpt": 'Получили уведомление об уплате налога на недвижимость? В 2023г. мы с Вами платим налог за 2022г. Уплата налога на недвижи..',
+	-		"date": '05 пареля 2023'
+	-	},
+	-	{
+	-		"img": '01.jpg',
+	-		"link": 'Изменения для индивидуальных предпринимателей с 1 июля 2023',
+	-		"excerpt": 'На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..',
+	-		"date": '16 июня 2023'
+	-	},
+	- ];
+	
 	.header
 		h2 Новости
-		a.arrowLink(href="/news.html")
-			span Смотреть все
-			img(src="/assets/img/icons/arrowLink.svg" width="59" height="13")
-	.swiper.news
-		.swiper-wrapper
-			.swiper-slide
-				img(src="/assets/img/pages/home/news/01.jpg")
-				.dsc
-					a.title(href="/article.html") Изменения для индивидуальных предпринимателей с 1 июля 2023
-					span.excerpt На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..
-				.date
-					img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-					span 16 июня 2023 
-			.swiper-slide
-				img(src="/assets/img/pages/home/news/02.jpg")
-				.dsc
-					a.title(href="/article.html") Изменения НДС в 2023
-					span.excerpt В Беларуси в 2023 году вступил в силу Закон № 230-З, предусматривающий внесение изменений и дополнений в некоторые зако...
-				.date
-					img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-					span 05 мая 2023 
-			.swiper-slide
-				img(src="/assets/img/pages/home/news/03.jpg")
-				.dsc
-					a.title(href="/article.html") Платим налог на недвижимость с физических лиц в 2023 
-					span.excerpt Получили уведомление об уплате налога на недвижимость? В 2023г. мы с Вами платим налог за 2022г. Уплата налога на недвижи..
-				.date
-					img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-					span 12 апреля 2023
-			.swiper-slide
-				img(src="/assets/img/pages/home/news/01.jpg")
-				.dsc
-					a.title(href="/article.html") Изменения для индивидуальных предпринимателей с 1 июля 2023
-					span.excerpt На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..
-				.date
-					img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-					span 16 июня 2023
-	.swiper-nav
-		.pagination
-		.arrows
-			img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-			img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
+		if title == 'Index'
+			a.arrowLink(href="/news.html")
+				span Смотреть все
+				img(src="/assets/img/icons/arrowLink.svg" width="59" height="13")
+	if title == 'Index'
+		.swiper.news
+			.swiper-wrapper
+				each val, key in news
+					+article(val.img, val.link, val.excerpt, val.date)
+	else
+		.articles
+			each val, key in news
+				+article(val.img, val.link, val.excerpt, val.date)
+	if title == 'Index'
+		.swiper-nav
+			.pagination
+			.arrows
+				img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
+				img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")

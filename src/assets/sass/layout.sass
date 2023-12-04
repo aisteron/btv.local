@@ -487,40 +487,46 @@ footer
 		.swiper.news
 			padding: 19px
 			margin: -19px
-			.swiper-slide
-				background-color: $grey
-				height: auto
-				&-visible
-					box-shadow: $card_shadow
-				>img
-					width: 100%
-					border-bottom-left-radius: 0
-					border-bottom-right-radius: 0
-				a.title
-					color: $blue
-					text-decoration: none
-					font-size: 20px
-					font-weight: 500
-					display: block
-					&:hover
-						text-decoration: underline
-				.dsc
-					padding: 1.5rem
-					display: flex
-					flex-direction: column
-					justify-content: space-between
-					gap: 1rem
+		.swiper-slide
+			background-color: $grey
+			height: auto
+			&-visible
+				box-shadow: $card_shadow
+			>img
+				width: 100%
+				border-bottom-left-radius: 0
+				border-bottom-right-radius: 0
+			a.title
+				color: $blue
+				text-decoration: none
+				font-size: 20px
+				font-weight: 500
+				display: block
+				&:hover
+					text-decoration: underline
+			.dsc
+				padding: 1.5rem
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				gap: 1rem
 
-				.date
-					position: absolute
-					top: 0
-					left: 0
-					max-width: 182px
-					background-color: $light_blue	
-					display: flex
-					align-items: center
-					padding: 0.75rem 1.5rem
-					gap: 8px
+			.date
+				position: absolute
+				top: 0
+				left: 0
+				max-width: 80%
+				background-color: $light_blue	
+				display: flex
+				align-items: center
+				padding: 0.75rem 1.5rem
+				gap: 8px
+		.articles
+			display: grid
+			grid-template-columns: repeat(4, 1fr)
+			gap: 1rem
+			.swiper-slide
+				position: relative
 	&.testimonials
 		.swiper-slide
 			background-image: url(/assets/img/icons/quotes.svg)
@@ -625,6 +631,8 @@ body.news-page
 			height: 518px
 			nav.bread
 				padding-top: 130px
+				padding-left: 60px
 	.widget.news
 		margin-top: -440px
 		position: relative
+		padding: 0 60px
