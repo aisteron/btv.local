@@ -47,6 +47,12 @@
 				a
 					display: flex
 					align-items: center
+.postheader
+	background-position: center
+	background-repeat: no-repeat
+	position: relative
+	margin-top: -92px !important
+	background-color: #eee
 header
 	@include mw
 	display: flex
@@ -68,6 +74,8 @@ header
 			display: flex
 			gap: 1rem
 			>li
+				&.active a
+					text-decoration: underline
 				&:not(:last-child)
 					&:after
 						content: url(/assets/img/icons/d.svg)
@@ -172,10 +180,6 @@ footer
 						background-color: darken($light_blue, 5%)
 				.pub
 					margin-top: auto
-
-
-
-
 .widget
 	.header
 		margin-top: 100px
@@ -399,6 +403,7 @@ footer
 							margin-bottom: 1rem	
 	&.callback
 		background: url(/assets/img/ui/phone_hand.webp)
+		padding-left: 60px
 		.header
 			margin-bottom: 12px
 		form
@@ -535,17 +540,9 @@ footer
 				color: $dark
 				font-size: 15px
 				line-height: 140%
-
 body.index-page
-	section.content
-		@include mw
 	.postheader
 		height: 557px
-		background-position: center
-		background-repeat: no-repeat
-		position: relative
-		margin-top: -92px !important
-		background-color: #eee
 		.bg
 			z-index: 0
 			position: absolute
@@ -578,8 +575,7 @@ body.index-page
 				border-radius: 4px
 				width: 127px
 				&:hover
-					background-color: #1D375A
-				
+					background-color: #1D375A		
 		.stats
 			position: absolute
 			bottom: 0
@@ -619,3 +615,16 @@ body.index-page
 				span.dsc
 					font-weight: 400
 					line-height: 120%
+body.about-page
+	.widget.about
+		.header
+			margin-top: 0
+body.news-page
+	section.content
+		.postheader
+			height: 518px
+			nav.bread
+				padding-top: 130px
+	.widget.news
+		margin-top: -440px
+		position: relative

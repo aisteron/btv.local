@@ -57,26 +57,7 @@ section.content
 			.arrows
 				img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
 				img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-	.widget.stages
-		.header
-			h2 Этапы работы
-		.content
-			ul
-				li
-					img(src="/assets/img/icons/send.svg" width="24" height="24")
-					span.title Подача заявки
-					span.dsc Оставляете заявку на сайте или связываетесь с нашим специалистом по телефону
-				li
-					img(src="/assets/img/icons/hearphones.svg" width="24" height="24")
-					span.title Консультация
-					span.dsc Мы рассчитываем индивидуальную стоимость обслуживания с учетом особенностей Вашего бизнеса
-				li
-					img(src="/assets/img/icons/graph.svg" width="24" height="24")
-					span.title Результат
-					span.dsc Вы предоставляете документы по хозяйственной деятельности, мы отражаем их в учете и составляем отчетность
-
-			.decor
-				img(src="/assets/img/ui/calc.jpg" width="594" height="313" loading="lazy")
+	include ../../ui/widgets/stages
 	.widget.tarifs
 		.header
 			h2 Тарифы и цены
@@ -128,51 +109,8 @@ section.content
 				.row
 					span от 50 BYN / час
 					a(href="/tarifs.html") Подробнее
-	.widget.about
-		.header
-			h2 О нас
-			a.arrowLink(href="/tarifs.html")
-				span Подробнее
-				img(src="/assets/img/icons/arrowLink.svg" width="59" height="13")
-		.content
-			.dsc
-				p Частное предприятие «БТВФинанс» предоставит возможность оптимизировать Ваши расходы на ведение бухгалтерского учета, сохраняя полный контроль над правильностью и своевременностью его ведения
-				p Наша компания берет на себя бухгалтерское сопровождение Вашего бизнеса при:
-				ul.ok
-					li регистрации юридического лица и индивидуального предпринимателя
-					li постановке бухгалтерского учета в компании
-					li ведении бухгалтерского учета
-					li восстановлении бухгалтерского учета
-			.image
-				img(src="/assets/img/ui/notebook_girl.webp" loading="lazy")
-	.widget.features
-		.header
-			h2 Наши преимущества
-		.items
-			.item
-				span.title Индивидуальный подход
-				ul.ok
-					li первичный аудит бухгалтерского учета
-					li подбор схемы сотрудничества под требования клиента
-					li подготовка стандартной отчетности
-			.item
-				span.title Экономия ресурсов
-				ul.ok
-					li автоматизация бух.учета, лицензионное ПО
-					li опция главного бухгалтера
-					li подготовка документации к архивации
-			.item
-				span.title Доступ к удаленному рабочему месту
-				ul.ok
-					li предоставление доступа к удаленному рабочему месту для оптимизации расходов на приобретение программного обеспечения
-					li все необходимые документы в одном месте, с круглосуточным доступом
-					li клиентская поддержка, возможность делегировать часть функций специалистам компании
-			.item
-				span.title Ежемесячный отчет
-				ul.ok
-					li ежемесячная отчетность
-					li контроль первичных учетных документов
-					li данные о переданных отчетах
+	include ../../ui/widgets/about
+	include ../../ui/widgets/features
 	.widget.callback
 		.header
 			h2 Оставить заявку
@@ -199,79 +137,5 @@ section.content
 			.content
 				span Наименование заказчика сокращенное
 				input(type="text" placeholder="Введите данные")
-	.widget.news
-		.header
-			h2 Новости
-			a.arrowLink(href="/news.html")
-				span Смотреть все
-				img(src="/assets/img/icons/arrowLink.svg" width="59" height="13")
-		.swiper.news
-			.swiper-wrapper
-				.swiper-slide
-					img(src="/assets/img/pages/home/news/01.jpg")
-					.dsc
-						a.title(href="/article.html") Изменения для индивидуальных предпринимателей с 1 июля 2023
-						span.excerpt На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..
-					.date
-						img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-						span 16 июня 2023 
-				.swiper-slide
-					img(src="/assets/img/pages/home/news/02.jpg")
-					.dsc
-						a.title(href="/article.html") Изменения НДС в 2023
-						span.excerpt В Беларуси в 2023 году вступил в силу Закон № 230-З, предусматривающий внесение изменений и дополнений в некоторые зако...
-					.date
-						img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-						span 05 мая 2023 
-				.swiper-slide
-					img(src="/assets/img/pages/home/news/03.jpg")
-					.dsc
-						a.title(href="/article.html") Платим налог на недвижимость с физических лиц в 2023 
-						span.excerpt Получили уведомление об уплате налога на недвижимость? В 2023г. мы с Вами платим налог за 2022г. Уплата налога на недвижи..
-					.date
-						img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-						span 12 апреля 2023
-				.swiper-slide
-					img(src="/assets/img/pages/home/news/01.jpg")
-					.dsc
-						a.title(href="/article.html") Изменения для индивидуальных предпринимателей с 1 июля 2023
-						span.excerpt На pravo.by не так давно опубликовали проект закона «Об изменении законов по вопросам предпринимательской деятельно..
-					.date
-						img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-						span 16 июня 2023
-		.swiper-nav
-			.pagination
-			.arrows
-				img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-				img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-	.widget.testimonials
-		.header
-			h2 Отзывы
-		.swiper.testimonials
-			.swiper-wrapper
-				.swiper-slide
-					span.name Василий
-					span.role Директор компании “ЛайтТайм”
-					.content
-						p Сотрудничать с этой компанией - одно удовольствие! Всегда оперативно реагируют на все возникающие вопросы и помогают в разрешении любых проблем. Я уверен, что мой бизнес в надежных руках благодаря «БТВФинанс»
-				.swiper-slide
-					span.name Ангелина
-					span.role Директор компании “ЭкоФуд”
-					.content
-						p Я очень довольна, что выбрала компанию «БТВФинанс»! Их профессиональный подход к работе порадовал меня и позволил сосредоточиться на ведении своего бизнеса. Спасибо большое за качественное обслуживание!
-				.swiper-slide
-					span.name Василий
-					span.role Директор компании “ЛайтТайм”
-					.content
-						p Сотрудничать с этой компанией - одно удовольствие! Всегда оперативно реагируют на все возникающие вопросы и помогают в разрешении любых проблем. Я уверен, что мой бизнес в надежных руках благодаря «БТВФинанс»
-				.swiper-slide
-					span.name Ангелина
-					span.role Директор компании “ЭкоФуд”
-					.content
-						p Я очень довольна, что выбрала компанию «БТВФинанс»! Их профессиональный подход к работе порадовал меня и позволил сосредоточиться на ведении своего бизнеса. Спасибо большое за качественное обслуживание!
-		.swiper-nav
-			.pagination
-			.arrows
-				img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-				img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-			
+	include ../../ui/widgets/news
+	include ../../ui/widgets/testimonials

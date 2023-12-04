@@ -58,7 +58,24 @@ a.arrowLink
 	letter-spacing: 2%
 	&:hover
 		text-decoration: underline
+nav.bread
+	padding-top: 2rem
+	color: $dark
+	font-size: 14px
+	a
+		color: $blue
 
+	ol
+		list-style: none
+		padding-left: 0
+		display: flex
+		gap: 1rem
+		margin: 0
+		li
+			&:not(:last-child)
+				&:after
+					content: "/"
+					padding-left: 1rem
 img, picture,svg
 	max-width: 100%
 	display: block
@@ -113,3 +130,6 @@ $notebook: 100%
 			span
 				&:last-of-type
 					margin-left: 3px
+
+section.content
+	@include mw
