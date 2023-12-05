@@ -462,6 +462,9 @@ footer
 					background-color: lighten($blue, 5%)
 	&.accordion
 		margin-top: 40px
+		display: flex
+		flex-direction: column
+		gap: 1rem
 		details
 			box-shadow: 0px 8px 16px 0px rgba(23, 23, 23, 0.12), 0px 2px 1px 0px rgba(23, 23, 23, 0.04)
 			background-color: #fff
@@ -472,6 +475,9 @@ footer
 				padding: 1.5rem
 				list-style: none
 				position: relative
+				color: $blue
+				font-weight: 500
+				font-size: 20px
 				&:after
 					transition: all 0.2s ease
 					content: url(/assets/img/icons/fat_chevron.svg)
@@ -481,6 +487,20 @@ footer
 					filter: $hover_blue
 			.content
 				padding: 24px
+				padding-top: 0
+				color: $dark
+				font-size: 15px	
+				*:first-child
+					margin-top: 0
+				b
+					font-weight: 500	
+				ul
+					@extend .ok
+					margin: 1.5rem 0
+					li
+						&:not(:last-child)
+							margin-bottom: 1rem
+							
 	&.news
 		.swiper.news
 			padding: 19px
@@ -700,7 +720,7 @@ body.article-page
 						font-weight: 400
 						font-size: 20px
 					ul
-						@extend .ok	
+						@extend .ok
 			.sidebar
 				background-color: $light_blue
 				min-width: 424px
@@ -742,4 +762,7 @@ body.faq-page
 			margin-top: -340px
 			position: relative
 			padding: 0 60px
+			min-height: 518px
+			h1
+				@extend %header
 				
