@@ -2,3 +2,18 @@ section.content
 	.postheader(style="background-image: url(/assets/img/pages/news/bg.webp)")
 		include ../../ui/bread
 	include ../../ui/widgets/news
+	
+	.pagination
+		ul
+			li.control.prev
+				a(href="#")
+					img(src="/assets/img/icons/arrow_control.svg" width="25" height="8" alt="")
+			li.page-item
+				a.page-link(href="#") 1
+			li.page-item.active
+				a.page-link(href="#") 2
+			li.page-item
+				a.page-link(href="#") 3
+			li.control.next
+				a(href="#")
+					img(src="/assets/img/icons/arrow_control.svg" width="25" height="8" alt="")
