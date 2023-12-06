@@ -1,9 +1,0 @@
-mixin article(img,link,excerpt,date)
-	.swiper-slide
-		img(src=`/assets/img/pages/home/news/${img}`)
-		.dsc
-			a.title(href="/article.html") #{link}
-			span.excerpt #{excerpt}
-		.date
-			img(src="/assets/img/icons/calendar.svg" width="24" height="24")
-			span #{date}
