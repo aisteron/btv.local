@@ -1,0 +1,21 @@
+block variables
+.widget.callback(class=(title == 'Index' || title == 'Services' ? 'index':''))
+	.header
+		h2 Оставить заявку 
+	form
+		span Свяжитесь с нами и мы подберём для Вас самый выгодный вариант сотрудничества
+		label
+			span Ваше имя
+			input(type="text")
+		label
+			span Ваш номер телефона <font color="red">*</font>
+			input(type="text" placeholder="+375 (xx) xxx xx xx" required)
+		label
+			span Сообщение
+			textarea(placeholder="Введите текст")
+		.accept
+			label
+				input(type="checkbox" checked)
+				span
+				span Я принимаю условия <a href="#">Пользовательского соглашения</a> и <a href="#">Политику конфиденциальности</a>
+		button(type="submit") Отправить

@@ -142,3 +142,60 @@ $notebook: 100%
 
 section.content
 	@include mw
+
+.services_aside_nav
+		background-color: $light_blue
+		align-self: flex-start
+		font-size: 15px
+		min-width: 312px
+		ul
+			li
+				.title
+					position: relative
+					padding-top: 0.5rem
+					padding-right: 1.5rem
+					padding-left: 1.5rem
+					padding-bottom: 0.5rem
+					cursor: pointer
+					transition: all 0.3s ease
+					border-radius: 4px
+					display: block
+					&:first-of-type
+						padding-top: 1rem
+					&:hover
+						background-color: $blue
+						color: $light_blue
+						&:after
+							filter: brightness(0), saturate(100%)
+							filter: $hover_light_blue
+					&:after
+						content: url(/assets/img/icons/chevron.svg)
+						position: absolute
+						right: 1.5rem
+						top: 42%
+						width: 1rem
+						height: 1rem
+						transition: all 0.3s ease
+				ul
+					display: none
+					padding-left: 2rem
+				&.open
+					.title
+						background-color: $blue
+						color: $light_blue
+						&:after
+							filter: brightness(0), saturate(100%)
+							filter: $hover_light_blue
+							transform: rotate(180deg)
+					ul
+						display: block
+						margin: 1rem 0
+						display: flex
+						flex-direction: column
+						gap: 12px
+						li
+							&.active
+								a
+									text-decoration: underline
+									&:hover
+										text-decoration: none
