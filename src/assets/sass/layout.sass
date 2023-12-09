@@ -64,6 +64,9 @@ header
 	z-index: 2
 	a.logo
 		flex-grow: 1
+		transition: opacity 0.3s ease
+		&:hover
+			opacity: 0.7
 	nav
 		a
 			color: $dark
@@ -320,6 +323,7 @@ footer
 				box-shadow: 0px 8px 16px 0px rgba(23, 23, 23, 0.12), 0px 2px 1px 0px rgba(23, 23, 23, 0.04)
 				padding: 2rem 1.5rem
 				border-radius: 4px
+				background-color: #fff
 				h4
 					font-weight: 500
 					font-size: 20px
@@ -501,7 +505,39 @@ footer
 					li
 						&:not(:last-child)
 							margin-bottom: 1rem
-							
+	&.price_table
+		font-size: 15px
+		font-weight: 500
+		a
+			text-decoration: underline
+			color: $dark
+			&:hover
+				text-decoration: none
+		.thead, .tbody .tr
+			padding: 1.5rem 40px
+			display: grid
+			grid-template-columns: repeat(2,1fr) 60px 85px
+			gap: 40px
+			span
+				&:last-of-type
+					text-align: right
+		.thead
+			background-color: $blue
+			color: $light_blue
+		.tbody
+			.tr
+				background-color: #F4F4F4
+				color: $dark
+		.coef
+			font-weight: 400
+			color: $dark
+			margin-top: 2rem
+			h2
+				@extend %header
+				margin-bottom: 1rem
+				font-size: 20px
+			ul
+				@extend .ok	
 	&.news
 		.swiper.news
 			padding: 19px
@@ -752,7 +788,11 @@ body.article-page
 						span
 							color: $dark
 							font-size: 14px
-body.faq-page, body.contacts-page, body.services-page
+body.faq-page, 
+	body.contacts-page, 
+	body.services-page, 
+	body.service-page,
+	body.tarifs-page,
 	section.content
 		.postheader
 			height: 518px
@@ -819,26 +859,26 @@ body.services-page
 		gap: 40px
 		margin-top: 40px
 		margin-bottom: 2rem
-	.content
-		*:first-child
-			margin-top: 0
-		display: flex
-		flex-direction: column
-		gap: 2rem	
-		font-size: 15px
-		h2
-			color: $blue
-			font-size: 20px
-			font-weight: 500
-		p
-			&:last-of-type
-				margin-bottom: 0
-		p, li, a
-			color: $dark
-		a
-			text-decoration: none
-			&:hover
-				text-decoration: underline	
+		.content
+			*:first-child
+				margin-top: 0
+			display: flex
+			flex-direction: column
+			gap: 2rem	
+			font-size: 15px
+			h2
+				color: $blue
+				font-size: 20px
+				font-weight: 500
+			p
+				&:last-of-type
+					margin-bottom: 0
+			p, li, a
+				color: $dark
+			a
+				text-decoration: none
+				&:hover
+					text-decoration: underline
 		.item
 			background-color: #F4F4F4
 			box-shadow: $card_shadow
@@ -850,4 +890,44 @@ body.services-page
 					&:not(:last-child)
 						margin-bottom: 12px
 	.widget.callback
-		padding-left: 0					
+		padding-left: 0
+body.service-page
+	.widget.callback
+		padding-left: 0
+	.wrap
+		display: flex
+		gap: 40px
+		margin-top: 40px
+		margin-bottom: 2rem
+		.content
+			*:first-child
+				margin-top: 0
+			h2
+				color: $blue
+				font-size: 20px
+				font-weight: 500
+			p
+				&:last-of-type
+					margin-bottom: 0
+			p, li, a
+				color: $dark
+			a
+				text-decoration: none
+				&:hover
+					text-decoration: underline		
+			ul
+				@extend .ok
+				margin: 1rem 0
+				li
+					&:not(:last-child)
+						margin-bottom: 10px
+			.widget.price_table
+				margin-top: 2rem
+				.coef
+					font-weight: 400
+					margin-top: 2rem
+body.tarifs-page
+	.widget.tarifs
+		&.t
+			.header
+				margin-top: 0
