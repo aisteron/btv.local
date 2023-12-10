@@ -1,6 +1,7 @@
 const webpack =  require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
+const fs = require('fs')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
@@ -13,6 +14,30 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     overlay: {
       warnings: true,
       errors: true
+    },
+		setup(app){
+      var bodyParser = require('body-parser');    
+      app.use(bodyParser.urlencoded({extended : true}));
+      app.use(bodyParser.json());
+
+      app.post('/api/cart', (req, res) => {
+          
+          if(req.body.action == 'get_order'){
+            const data = fs.readFileSync('./src/static/api/cart/get_order.json', 'utf8')
+            res.send(data)
+          }
+          
+      }); 
+      
+      app.post('/api/', (req, res) => {
+					if(req.body.action == 'form_zayavka'){
+						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
+						res.send(data)
+					}	
+      });
+
+  
+
     }
   },
   plugins: [

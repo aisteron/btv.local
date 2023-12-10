@@ -1,0 +1,41 @@
+.widget.accordion.zayavka
+	details
+		summary Заявка к публичной оферте от 25.05.2023
+		form.content
+			ul
+				li
+					span Наименование заказчика сокращенное
+					input(type="text" placeholder="Введите данные" name="short_name" required)
+				li
+					span Наименование заказчика полное
+					input(type="text" placeholder="Введите данные" name="full_name")
+					
+				li
+					span Юридический адрес
+					input(type="text" placeholder="Введите данные" name="addr")
+				li
+					span Банковские реквизиты
+					input(type="text" placeholder="Введите данные" name="bank")
+				
+				li
+					span УНП
+					input(type="text" placeholder="Введите данные" name="unp")
+				li
+					span Руководитель
+					input(type="text" placeholder="Введите данные" name="head")
+				li
+					span Документ, подтверждающий полномочия руководителя (индивидуального предпринимателя)
+					input(type="text" placeholder="Введите данные" name="approve_doc")
+				li
+					span Перечень необходимых услуг
+					textarea(placeholder="Введите текст" name="service_list")
+				li
+					span Лицо, подавшее заявку
+					textarea(placeholder="Введите текст" name="face")
+				li
+					span Ваша электронная почта
+					input(type="text" placeholder="info@gmail.com" name="email")
+
+				input(type="submit" value="Отправить")
+
+
