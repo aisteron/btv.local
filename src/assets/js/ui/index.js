@@ -4,6 +4,7 @@ export function Ui(){
 	swipers.services()
 	swipers.news()
 	swipers.testimonials()
+	open_mobile_burger_menu()
 }
 
 export const swipers = {
@@ -117,5 +118,15 @@ export const swipers = {
 		}
 		sw.init(ss, settings)
 	}
+
+}
+
+function open_mobile_burger_menu(){
+	let burger = qs('#nav-icon1')
+	if(!burger) return
+
+	burger.listen("click", e => {
+		burger.classList.toggle('open')
+	})
 
 }
