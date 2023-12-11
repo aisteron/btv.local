@@ -2,6 +2,7 @@ import {load_toast, qs,qsa, xml} from '../libs'
 export function Pages(){
 	services_page_nav_accordion()
 	zayavka_form()
+	header_services_menu_item_open()
 }
 
 function services_page_nav_accordion(){
@@ -53,4 +54,34 @@ function zayavka_form(){
 
 
 	})
+}
+
+function header_services_menu_item_open(){
+	let lis = qsa('header li.expandable')
+	if(!lis.length) return
+
+
+	lis.forEach(li => {
+		let svg = qs("svg", li)
+
+		svg.listen("click", e => {
+			e.target.closest(".expandable").classList.toggle('open')
+
+		})
+
+	})
+
+	document.listen("click", e => {
+		let lis = qsa('header li.expandable')
+		let it_close = true
+
+		lis.forEach(li =>{
+			let svg = qs("svg", li);
+			(e.target == svg || li.contains(e.target) ) && (it_close = false)	
+		})
+		
+		it_close && lis.forEach(li => li.classList.remove('open'))
+		
+	})
+	
 }
