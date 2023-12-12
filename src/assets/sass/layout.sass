@@ -8,6 +8,8 @@
 	padding: 8px 60px
 	@media(max-width: 1100px)
 		padding: 8px 1rem
+	@media(max-width: 820px)	
+		display: none
 	a
 		color: #fff
 		text-decoration: none
@@ -28,6 +30,8 @@
 					margin-left: 12px
 					cursor: pointer
 					border: 1px solid transparent
+					@media(max-width: 1100px)
+						padding: 8px 24px
 					&:hover
 						background-color: #D8E2ED
 					&:active
@@ -58,20 +62,32 @@
 	position: relative
 	margin-top: -92px !important
 	background-color: #eee
+	@media(max-width: 820px)
+		margin-top: -60px !important
 header
 	@include mw
 	display: flex
+	gap: 1rem
 	padding: 1rem 60px
 	align-items: center
 	background: linear-gradient(111deg, rgba(255, 255, 255, 0.50) -8.95%, rgba(255, 255, 255, 0.60) 114%)
 	backdrop-filter: blur(7.5px)
 	position: relative
 	z-index: 2
+	justify-content: space-between
 	@media(max-width: 1100px)
 		padding: 1rem
+		a.logo img
+			width: 170px
+	@media(max-width: 820px)	
+		margin-top: 1rem
+		padding: 0 1rem	
 	a.logo
 		flex-grow: 1
 		transition: opacity 0.3s ease
+		@media(max-width: 930px)
+			flex-grow: unset
+
 		&:hover
 			opacity: 0.7
 	nav
@@ -83,6 +99,8 @@ header
 		>ul
 			display: flex
 			gap: 1rem
+			@media(max-width: 930px)
+				display: none
 			>li
 				&.active a
 					text-decoration: underline
@@ -726,6 +744,8 @@ body.index-page
 			height: 100%
 			background-size: cover
 			background-repeat: no-repeat
+			@media(max-width: 1130px)
+				background-position: 100%
 		>.dsc
 			max-width: 520px
 			display: flex
