@@ -46,9 +46,9 @@ include ../../mixins.pug
 		.articles
 			each key, val in data
 				+article(key.img, key.title, key.excerpt, key.date)
-
-	.swiper-nav
-		.pagination
-		.arrows
-			img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
-			img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
+	if title == 'Index'
+		.swiper-nav
+			.pagination
+			.arrows
+				img.prev(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
+				img.next(src="/assets/img/icons/fat_chevron.svg" width="23" height="22")
