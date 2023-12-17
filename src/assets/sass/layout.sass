@@ -269,6 +269,8 @@ footer
 				a.user
 					display: inline-block
 					margin-top: auto
+					@media(max-width: 480px)
+						margin-top: 1rem
 				ul
 					li
 						&:not(last-child)
@@ -286,6 +288,8 @@ footer
 						display: flex
 						gap: 10px
 						margin-top: 10px
+						@media(max-width: 480px)
+							margin-top: 1rem
 				.ask, .pub
 					display: block
 				.ask
@@ -733,13 +737,44 @@ footer
 			display: grid
 			grid-template-columns: repeat(2,1fr) 60px 85px
 			gap: 40px
+			@media(max-width: 960px)
+				padding: 1.5rem
 			span
 				&:last-of-type
 					text-align: right
 		.thead
 			background-color: $blue
 			color: $light_blue
+			@media(max-width: 1180px)
+				display: none
 		.tbody
+			.tr
+				@media(max-width: 1180px)
+					grid-template-columns: 1fr
+					gap: 1rem
+					a
+						font-weight: 600
+						text-decoration: underline
+
+
+					span
+						&:first-of-type
+							grid-column: 1
+							grid-row: 2
+						&:nth-of-type(2)
+							grid-row: 3
+							grid-column: 1
+							&:before
+								content: 'в '
+
+						&:last-of-type
+							text-align: left
+							grid-column: 2
+							grid-row: 3
+							display: inline-block
+							
+							&:after
+								content:' р.'
 			.tr
 				background-color: #F4F4F4
 				color: $dark
@@ -1208,8 +1243,11 @@ body.service-page
 		gap: 40px
 		margin-top: 40px
 		margin-bottom: 2rem
-		.content
-			*:first-child
+		@media(max-width: 1000px)
+			flex-wrap: wrap
+			flex-direction: column-reverse
+		>.content
+			>*:first-child
 				margin-top: 0
 			h2
 				color: $blue

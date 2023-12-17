@@ -34,6 +34,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
 						res.send(data)
 					}	
+					if(req.body.action == 'callback'){
+						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
+						res.send(data)
+					}	
       });
 
   

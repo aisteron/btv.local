@@ -3,6 +3,7 @@ export function Pages(){
 	services_page_nav_accordion()
 	zayavka_form()
 	header_services_menu_item_open()
+	dialog_popup()
 }
 
 function services_page_nav_accordion(){
@@ -84,4 +85,33 @@ function header_services_menu_item_open(){
 		
 	})
 	
+}
+
+function dialog_popup(){
+	let d = qs('footer dialog')
+	if(!d) return
+	qsa('.ask').forEach(el => {
+		el.listen("click", _ => d.showModal())
+	})
+
+	qs('.close', d).listen("click", _=> d.close())
+
+	// submit
+
+	qs('form',d).listen("submit", async (e) => {
+		e.preventDefault()
+		let o = JSON.stringify({phone: qs('input[type="text"]',e.target).value})
+		 
+		let res = await xml('callback', o, '/api/').then(r => JSON.parse(r))
+		await load_toast()
+		
+		if(res){
+			qs('form', d).remove()
+			qs('p', d).innerHTML = 'Успешно <br>отправлено!'
+			new Snackbar('Успешно отправлено')
+		} else {
+			new Snackbar('Ошибка отправки')
+		}
+	})
+
 }

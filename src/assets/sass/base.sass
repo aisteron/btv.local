@@ -234,6 +234,7 @@ section.content
 
 		&:nth-child(2)
 			top: 6px
+			height: 2.2px
 
 		&:nth-child(3)
 			top: 12px
@@ -250,3 +251,43 @@ section.content
 		&:nth-child(3)
 			top: 6px
 			transform: rotate(-135deg)
+footer dialog
+	border: none
+	width: 207px
+	height: 155px
+	form
+		display: flex
+		flex-direction: column
+		gap: 1rem
+		input
+			&[type="text"]
+				padding: 5px
+				border-radius: 4px
+				outline: none
+				border: 1px solid #eee
+				&:focus
+					outline: none
+					border: 1px solid #ccc
+					background-color: $light_blue
+			&[type="submit"]
+				background-color: $blue
+				color: $light_blue
+				border: none
+				padding: 7px
+				outline: none
+				font-family: 'SF Pro Text'
+				cursor: pointer
+				border-radius: 4px
+				&:hover
+					background-color: lighten($blue, 5%)
+				&:focus
+					outline: none
+						
+	img
+		position: absolute
+		right: 10px 
+		top: 10px
+		cursor: pointer
+		&:hover
+			filter: brightness(0) saturate(100%)
+			filter: invert(33%) sepia(73%) saturate(1993%) hue-rotate(335deg) brightness(114%) contrast(126%) 
