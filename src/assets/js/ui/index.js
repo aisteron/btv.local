@@ -127,6 +127,7 @@ function open_mobile_burger_menu(){
 
 	burger.listen("click", e => {
 		burger.classList.toggle('open')
+		e.target.previousElementSibling.classList.toggle('open')
 	})
 
 }
