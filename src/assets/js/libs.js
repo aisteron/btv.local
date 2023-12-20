@@ -1,8 +1,6 @@
 import "regenerator-runtime/runtime.js";
 Node.prototype.listen = Node.prototype.addEventListener;
-export const cfg = {
-	host: "https://btvfinans.by/"
-}
+
 export let doc=document,
     qsa=(s,o=doc)=>o?.querySelectorAll(s),
     qs=(s,o=doc)=>o?.querySelector(s);
@@ -44,9 +42,9 @@ export async function xml(action, data, path){
 		let xhr = new XMLHttpRequest();
 		let body = `action=${action}${data ? `&data=`+data : ""}`
 
-		process.env.NODE_ENV == 'development' && (cfg.host = '')
+		
 
-		xhr.open("POST", cfg.host+path, true);
+		xhr.open("POST", path, true);
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		xhr.onreadystatechange = function () {

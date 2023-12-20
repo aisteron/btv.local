@@ -40,7 +40,7 @@ function zayavka_form(){
 			
 		}
 
-		let res = await xml("form_zayavka", obj, '/api').then(r => JSON.parse(r))
+		let res = await xml("form_zayavka", obj, 'api').then(r => JSON.parse(r))
 		await load_toast()
 
 		if(res.success){
@@ -103,7 +103,7 @@ function dialog_popup(){
 		e.preventDefault()
 		let o = JSON.stringify({phone: qs('input[type="text"]',e.target).value})
 		 
-		let res = await xml('callback', o, '/api/').then(r => JSON.parse(r))
+		let res = await xml('callback', o, 'api').then(r => JSON.parse(r))
 		await load_toast()
 		
 		if(res){
@@ -136,7 +136,7 @@ function widget_callback(){
 		
 		try {
 
-			let res = await xml('widget_callback', o, '/api').then(r => JSON.parse(r))
+			let res = await xml('widget_callback', o, 'api').then(r => JSON.parse(r))
 
 			if(res.success){
 				new Snackbar("Успешно отправлено");
