@@ -19,22 +19,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       var bodyParser = require('body-parser');    
       app.use(bodyParser.urlencoded({extended : true}));
       app.use(bodyParser.json());
-
-      app.post('/api/cart', (req, res) => {
-          
-          if(req.body.action == 'get_order'){
-            const data = fs.readFileSync('./src/static/api/cart/get_order.json', 'utf8')
-            res.send(data)
-          }
-          
-      }); 
       
-      app.post('/api/', (req, res) => {
+      app.post('/api', (req, res) => {
 					if(req.body.action == 'form_zayavka'){
 						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
 						res.send(data)
 					}	
 					if(req.body.action == 'callback'){
+						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
+						res.send(data)
+					}	
+					if(req.body.action == 'widget_callback'){
 						const data = fs.readFileSync('./src/static/api/zayavka.json', 'utf8')
 						res.send(data)
 					}	

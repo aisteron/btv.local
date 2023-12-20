@@ -4,6 +4,7 @@ export function Pages(){
 	zayavka_form()
 	header_services_menu_item_open()
 	dialog_popup()
+	widget_callback()
 }
 
 function services_page_nav_accordion(){
@@ -39,7 +40,7 @@ function zayavka_form(){
 			
 		}
 
-		let res = await xml("form_zayavka", obj, '/api/').then(r => JSON.parse(r))
+		let res = await xml("form_zayavka", obj, '/api').then(r => JSON.parse(r))
 		await load_toast()
 
 		if(res.success){
@@ -63,9 +64,9 @@ function header_services_menu_item_open(){
 
 
 	lis.forEach(li => {
-		let svg = qs("svg", li)
+		let img = qs("img", li)
 
-		svg.listen("click", e => {
+		img.listen("click", e => {
 			e.target.closest(".expandable").classList.toggle('open')
 
 		})
@@ -114,4 +115,38 @@ function dialog_popup(){
 		}
 	})
 
+}
+
+function widget_callback(){
+	let form = qs('.widget.callback form')
+	if(!form) return
+
+	
+	form.listen("submit", async e => {
+
+		let o = {
+			name: qsa('input', form)[0].value,
+			phone: qsa('input', form)[1].value,
+			message: qs('textarea', form).value,
+		}
+
+		e.preventDefault()
+
+		await load_toast()
+		
+		try {
+
+			let res = await xml('widget_callback', o, '/api').then(r => JSON.parse(r))
+
+			if(res.success){
+				new Snackbar("Успешно отправлено");
+				[...qsa('input[type="text"]', form), qs('textarea')].forEach(el => el.value = '')
+			} else {
+				new Snackbar("Ошибка отправки")
+			}
+		} catch(e){
+			new Snackbar(e)
+		}
+		
+	})
 }
