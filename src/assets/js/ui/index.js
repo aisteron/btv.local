@@ -4,6 +4,7 @@ export function Ui(){
 	swipers.services()
 	swipers.news()
 	swipers.testimonials()
+	swipers.partners()
 	open_mobile_burger_menu()
 }
 
@@ -112,6 +113,42 @@ export const swipers = {
         },
         1024: {
           slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+		}
+		sw.init(ss, settings)
+	},
+	async partners(){
+
+		let ss = qs('.swiper.partners')
+		if(!ss) return
+
+		await sw.load()
+
+		let settings = {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			pagination: {
+				el: qs(".pagination",ss.closest('.widget')),
+				clickable: true,
+			},
+			navigation: {
+        nextEl: qs(".next",ss.closest(".widget")),
+        prevEl: qs(".prev",ss.closest(".widget")),
+      },
+			watchSlidesProgress: true,
+			breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 4,
           spaceBetween: 30,
         },
       },
